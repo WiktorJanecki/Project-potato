@@ -1,10 +1,12 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Buy : MonoBehaviour
 {
     public GameObject player;
+    public AudioSource source;
     void Start()
     {
         
@@ -20,7 +22,10 @@ public class Buy : MonoBehaviour
         if (player.GetComponent<Statistics>().coins >= transform.parent.GetComponent<UpgradeChanger>().upgrade.price) {
             player.GetComponent<Statistics>().coins -= transform.parent.GetComponent<UpgradeChanger>().upgrade.price;
             player.GetComponent<Statistics>().bonus += transform.parent.GetComponent<UpgradeChanger>().upgrade.value;
-            Destroy(transform.gameObject);
+            source.Play();
+            transform.GetComponent<Image>().enabled = false;
+            Destroy(transform.GetChild(0).transform.gameObject);
+            Destroy(transform.gameObject,3f);
         }
     }
 }

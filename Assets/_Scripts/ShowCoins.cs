@@ -17,6 +17,7 @@ public class ShowCoins : MonoBehaviour
     void Update()
     {
         score = player.GetComponent<Statistics>().coins;
+        score = Mathf.Round(score * 100) / 100f;
         textmeshPro.text = score.ToString() + " coins";
     }
 }

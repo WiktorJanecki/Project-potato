@@ -17,6 +17,14 @@ public class ShowPrice : MonoBehaviour
     void Update()
     {
         score = player.GetComponent<Statistics>().potatoPrice;
+        if(score > 0.15)
+        {
+            textmeshPro.color = new Color(0f, 255, 0, 255);
+        }
+        else
+        {
+            textmeshPro.color = new Color(255, 0, 0, 255);
+        }
         textmeshPro.text = score.ToString() + " $";
     }
 }

@@ -1,0 +1,22 @@
+﻿using System.Collections;
+using System.Collections.Generic;
+using UnityEngine;
+using TMPro;
+
+public class ShowPoints : MonoBehaviour
+{
+    public TextMeshProUGUI textmeshPro;
+    private int score;
+    public GameObject player;
+    // Start is called before the first frame update
+    void Start()
+    {
+    }
+
+    // Update is called once per frame
+    void Update()
+    {
+        score = player.GetComponent<Statistics>().potatoes;
+        textmeshPro.text = score.ToString() + " potatoes";
+    }
+}

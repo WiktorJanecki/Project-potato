@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: df4d39f713222e846854c6b8b043f93c, type: 3}
   m_Name: Hoe
   m_EditorClassIdentifier: 
+  index: 1
   name: Hoe
   description: Simple hoe. Just use it
   price: 50

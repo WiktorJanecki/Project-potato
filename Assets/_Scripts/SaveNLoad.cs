@@ -20,6 +20,9 @@ public class SaveNLoad : MonoBehaviour
         public int lands;
         public int[,] landColors;
         public string[] landUpgrades;
+        public int children;
+        public int childProgress;
+        public List<Children> childrenObj;
 
         public Player(Statistics stats)
         {
@@ -29,6 +32,9 @@ public class SaveNLoad : MonoBehaviour
             lands = stats.lands;
             landColors = stats.landColors;
             landUpgrades = stats.landUpgrades;
+            children = stats.children;
+            childProgress = stats.childrenProgress;
+            childrenObj = stats.childrenObjects;
         }
     }
 
@@ -59,6 +65,9 @@ public class SaveNLoad : MonoBehaviour
             {
                 player.GetComponent<Statistics>().landUpgrades[j] = data.landUpgrades[j];
             }
+            player.GetComponent<Statistics>().children = data.children;
+            player.GetComponent<Statistics>().childrenProgress = data.childProgress;
+            player.GetComponent<Statistics>().childrenObjects = data.childrenObj;
         }
         
     }

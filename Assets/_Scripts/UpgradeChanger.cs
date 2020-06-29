@@ -13,9 +13,16 @@ public class UpgradeChanger : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        image.sprite = upgrade.image;
-        text.text = upgrade.name;
-        price.text = upgrade.price.ToString() + "$";
+        try
+        {
+            image.sprite = upgrade.image;
+            text.text = upgrade.name;
+            price.text = upgrade.price.ToString() + "$";
+        }
+        catch (System.Exception)
+        {
+
+        }
     }
 
     // Update is called once per frame

@@ -16,13 +16,17 @@ public class Warper : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if(transform.GetComponent<Statistics>().actualLand > 0)
+        if(transform.GetComponent<Statistics>().actualLand > 0 && !transform.GetComponent<Statistics>().baby)
         {
             warpLand();
         }
-        else
+        else if(transform.GetComponent<Statistics>().actualLand == 0 && !transform.GetComponent<Statistics>().baby)
         {
             warpNormal();
+        }
+        else
+        {
+            warpBaby();
         }
     }
     public void warpNormal()
@@ -30,6 +34,9 @@ public class Warper : MonoBehaviour
         Normal.SetActive(true);
         Land.SetActive(false);
         Baby.SetActive(false);
+        transform.GetComponent<Statistics>().actualLand = 0;
+        transform.GetComponent<Statistics>().actualBabyID = -1;
+        transform.GetComponent<Statistics>().baby = false;
     }
     public void warpLand()
     {

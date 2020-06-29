@@ -37,6 +37,19 @@ public class BuyLand : MonoBehaviour
                     player.GetComponent<Statistics>().landUpgrades[i] = "0000";
                 }
             }
+            int[,] arrayy = player.GetComponent<Statistics>().landColors;
+            player.GetComponent<Statistics>().landColors = new int[player.GetComponent<Statistics>().lands, 3];
+            for(int i = 0; i < player.GetComponent<Statistics>().lands-1; i++)
+            {
+                player.GetComponent<Statistics>().landColors[i, 0] = arrayy[i, 0];
+                player.GetComponent<Statistics>().landColors[i, 1] = arrayy[i, 1];
+                player.GetComponent<Statistics>().landColors[i, 2] = arrayy[i, 2];
+            }
+            for (int i = player.GetComponent<Statistics>().lands-1; i < player.GetComponent<Statistics>().lands; i++){
+                player.GetComponent<Statistics>().landColors[i, 0] = UnityEngine.Random.Range(55, 254);
+                player.GetComponent<Statistics>().landColors[i, 1] = UnityEngine.Random.Range(55, 254);
+                player.GetComponent<Statistics>().landColors[i, 2] = UnityEngine.Random.Range(55, 254);
+            }
         }
     }
 }

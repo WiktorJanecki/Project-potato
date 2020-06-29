@@ -38,6 +38,14 @@ public class PotatoSpawner : MonoBehaviour
             click.SetActive(true);
         }
     }
+    public void OnEnable()
+    {
+        StartCoroutine(SpawnFood());
+    }
+    public void OnDisable()
+    {
+        StopCoroutine(SpawnFood());
+    }
     public void DeletePotato()
     {
         click.SetActive(false);

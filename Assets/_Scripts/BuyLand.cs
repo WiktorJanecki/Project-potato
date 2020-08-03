@@ -50,6 +50,10 @@ public class BuyLand : MonoBehaviour
                 player.GetComponent<Statistics>().landColors[i, 1] = UnityEngine.Random.Range(55, 254);
                 player.GetComponent<Statistics>().landColors[i, 2] = UnityEngine.Random.Range(55, 254);
             }
+            while (player.GetComponent<Statistics>().landWorkers.Count < player.GetComponent<Statistics>().lands)
+            {
+                player.GetComponent<Statistics>().landWorkers.Add(null);
+            }
         }
     }
 }

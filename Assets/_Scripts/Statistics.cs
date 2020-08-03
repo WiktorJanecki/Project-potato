@@ -24,9 +24,15 @@ public class Statistics : MonoBehaviour
     private string[] names = { 
         "Emma","Olivia","Ava","Isabella","Sophia","Charlotte","Mia","Amelia","Harper","Evelyn","Abigail","Emily","Elizabeth","Mila","Ella",
         "Liam","Noah","Wiliam","James","Oliver","Benjamin","Elijah","Lucas","Mason","Logan","Alexander","Ethan","Jacob","Michael","Daniel",
-        "wiktor","Victor","wiktor","wiktor","wiktor"
+        "Wiktor","Victor","Wiktor","Wiktor","Wiktor"
     };
     public int actualBabyID = -1;
+
+    public List<Children> workersObjects = new List<Children>();
+    public int actaulWorker = -1;
+    public List<Children> landWorkers = new List<Children>();
+    public GameObject workerList;
+    public int actualLandWorker = -1;
 
 
     void Start()
@@ -43,6 +49,10 @@ public class Statistics : MonoBehaviour
     public void switchBaby()
     {
         baby = !baby;
+    }
+    public void hideWorkerList()
+    {
+        workerList.SetActive(false);
     }
     #region BabyBorn
     [SerializeField]

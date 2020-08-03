@@ -19,6 +19,6 @@ public class GoToChild : MonoBehaviour
     public void Click()
     {
         int index = transform.parent.transform.GetSiblingIndex();
-        player.GetComponent<Statistics>().actualBabyID = index;
+        player.GetComponent<Statistics>().actualBabyID = player.GetComponent<Statistics>().childrenObjects[index].id;
     }
 }

@@ -23,6 +23,8 @@ public class SaveNLoad : MonoBehaviour
         public int children;
         public int childProgress;
         public List<Children> childrenObj;
+        public List<Children> workersObj;
+        public List<Children> landWorkers;
 
         public Player(Statistics stats)
         {
@@ -35,6 +37,8 @@ public class SaveNLoad : MonoBehaviour
             children = stats.children;
             childProgress = stats.childrenProgress;
             childrenObj = stats.childrenObjects;
+            workersObj = stats.workersObjects;
+            landWorkers = stats.landWorkers;
         }
     }
 
@@ -68,6 +72,13 @@ public class SaveNLoad : MonoBehaviour
             player.GetComponent<Statistics>().children = data.children;
             player.GetComponent<Statistics>().childrenProgress = data.childProgress;
             player.GetComponent<Statistics>().childrenObjects = data.childrenObj;
+            player.GetComponent<Statistics>().workersObjects = data.workersObj;
+            player.GetComponent<Statistics>().landWorkers = data.landWorkers;
+
+            while(player.GetComponent<Statistics>().landWorkers.Count < player.GetComponent<Statistics>().lands)
+            {
+                player.GetComponent<Statistics>().landWorkers.Add(null);
+            }
         }
         
     }

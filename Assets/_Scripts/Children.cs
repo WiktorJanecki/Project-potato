@@ -11,6 +11,7 @@ public class Children
     public float speed = 1.0f;
     public int capacity = 5000;
     public float grow = 0.0f;
+    public int potatoes = 0;
     public long obstain;
     public long fullGrow;
     public long lastOpen;

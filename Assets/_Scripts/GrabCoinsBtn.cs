@@ -17,6 +17,7 @@ public class GrabCoinsBtn : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        btn.SetActive(false);
         Children actual = stats.landWorkers[stats.actualLand - 1];
         if(actual.potatoes > actual.capacity) { actual.potatoes = actual.capacity; }
         text.text = actual.potatoes.ToString() + "/" + actual.capacity.ToString();

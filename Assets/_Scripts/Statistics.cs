@@ -5,7 +5,9 @@ using UnityEngine;
 
 public class Statistics : MonoBehaviour
 {
+    public int clicks = 0;
     public int potatoes = 0;
+    public int totalPotatoes = 0;
     public float coins = 0;
 
     public float potatoPrice = 0.1f;
@@ -45,6 +47,8 @@ public class Statistics : MonoBehaviour
     public void increasePotatoes()
     {
         potatoes += 1+bonus;
+        totalPotatoes += 1+bonus;
+        clicks++;
     }
     public void switchBaby()
     {
@@ -61,6 +65,7 @@ public class Statistics : MonoBehaviour
     private AudioSource cry;
     [SerializeField]
     private GameObject childObjCreator;
+    public GameObject potatoClicker;
     public void addPotatoesToProgress()
     {
         if(potatoes >= 100)

@@ -14,6 +14,7 @@ public class ads : MonoBehaviour, IUnityAdsListener
     private bool isTestAd = false;
 
     private Statistics stats;
+    public GameObject music;
     void Start()
     {
         stats = Camera.main.GetComponent<Statistics>();
@@ -43,7 +44,7 @@ public class ads : MonoBehaviour, IUnityAdsListener
 
     public void OnUnityAdsDidStart(string placementId)
     {
-        //throw new System.NotImplementedException();
+        music.SetActive(false);
     }
 
     public void OnUnityAdsDidFinish(string placementId, ShowResult showResult)

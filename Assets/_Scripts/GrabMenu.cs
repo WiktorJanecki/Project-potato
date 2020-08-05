@@ -57,6 +57,7 @@ public class GrabMenu : MonoBehaviour
     {
         Children actual = player.GetComponent<Statistics>().landWorkers[player.GetComponent<Statistics>().actualLand-1];
         player.GetComponent<Statistics>().potatoes += actual.potatoes;
+        player.GetComponent<Statistics>().totalPotatoes += actual.potatoes;
         actual.potatoes = 0;
         actual.lastOpen = DateTime.Now.Ticks / 10000000;
         Back();

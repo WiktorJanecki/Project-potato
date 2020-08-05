@@ -8,6 +8,7 @@ public class PotatoSpawner : MonoBehaviour
     public GameObject prefab;
     bool doing = false;
     public AudioSource source;
+    public GameObject dps;
     public GameObject click;
     // Start is called before the first frame update
     void Start()
@@ -24,6 +25,7 @@ public class PotatoSpawner : MonoBehaviour
     {
         if (transform.childCount < 20)
         {
+            dps.SetActive(false);
             doing = true;
             Vector3 pos = transform.position + new Vector3(Random.Range((-size / 2)+0.1f, (size / 2)-0.1f), Random.Range((-size / 2) + 1f, (size / 2)));
             GameObject gm = Instantiate(prefab, pos, Quaternion.identity);
@@ -48,6 +50,7 @@ public class PotatoSpawner : MonoBehaviour
     }
     public void DeletePotato()
     {
+        dps.SetActive(true);
         click.SetActive(false);
         if (transform.childCount != 0) {
             Destroy(GetComponent<Transform>().GetChild(0).gameObject);

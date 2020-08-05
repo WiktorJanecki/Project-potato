@@ -17,6 +17,6 @@ public class ShowPoints : MonoBehaviour
     void Update()
     {
         score = player.GetComponent<Statistics>().potatoes;
-        textmeshPro.text = score.ToString() + " potatoes";
+        textmeshPro.text = score.ToString() + "";
     }
 }

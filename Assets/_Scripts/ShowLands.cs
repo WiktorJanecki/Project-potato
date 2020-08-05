@@ -17,6 +17,6 @@ public class ShowLands : MonoBehaviour
     void Update()
     {
         score = player.GetComponent<Statistics>().lands;
-        textmeshPro.text = score.ToString() + " lands";
+        textmeshPro.text = score.ToString() + "";
     }
 }

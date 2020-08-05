@@ -18,6 +18,6 @@ public class ShowChildren : MonoBehaviour
     void Update()
     {
         score = player.GetComponent<Statistics>().children;
-        textmeshPro.text = score.ToString() + " children";
+        textmeshPro.text = score.ToString() + "";
     }
 }

@@ -61,6 +61,9 @@ public class SaveNLoad : MonoBehaviour
             stream.Close();
             player.GetComponent<Statistics>().potatoes = data.potatoes;
             player.GetComponent<Statistics>().coins = data.coins;
+            if(data.upgrades.Length < 4){
+                data.upgrades = "0000";
+            }
             player.GetComponent<Statistics>().upgrades = data.upgrades;
             player.GetComponent<Statistics>().lands = data.lands;
             player.GetComponent<Statistics>().landColors = data.landColors;
